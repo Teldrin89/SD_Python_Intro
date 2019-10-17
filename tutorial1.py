@@ -12,3 +12,34 @@ solution: https://docs.python.org/3/
 # this print function will print the text in double quotes (string)
 print("Hello people!")
 print("Just checking")
+
+'''
+Everything in Python is an object and some representation of that object can be a 
+variable. There are some naming rules for variable (for example can't start with
+a number) and the assignemnt is done with single "=" (as opposet to logical
+comparison which is done with "==")
+'''
+food = "bread", "cheese", "ham", "tomato"
+
+# to check the type of variable use a built in function
+print(type(food))
+# class of "food" variale is a tuple - immutable sequence (can be enclosed in "()")
+
+'''
+The for loop in python is an in-built function that without assignement takes a
+iteration variable and performs a chunk of code repeatedly over some other variable
+(eg. list)
+'''
+# the code run within the for loop is indentated
+for type_of_food in food:
+    print(type_of_food)
+# the repeated chunk of code is a "print" function - this will printout 4 times
+
+# the main difference between tuple and list is the immutability of tuple
+other_food = ["cucumber", "potato", "hot-dog"]
+# see the different type - list - for other food which is defined with "[]"
+print(type(other_food))
+# printout the other food list
+for other_type in other_food:
+    print(other_type)
+
