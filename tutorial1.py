@@ -31,17 +31,17 @@ iteration variable and performs a chunk of code repeatedly over some other varia
 (eg. list)
 '''
 # the code run within the for loop is indentated
-for type_of_food in food:
-    print(type_of_food)
+for typeOfFood in food:
+    print(typeOfFood)
 # the repeated chunk of code is a "print" function - this will printout 4 times
 
 # the main difference between tuple and list is the immutability of tuple
-other_food = ["cucumber", "potato", "hot-dog"]
+otherFood = ["cucumber", "potato", "hot-dog"]
 # see the different type - list - for other food which is defined with "[]"
-print(type(other_food))
+print(type(otherFood))
 # printout the other food list
-for other_type in other_food:
-    print(other_type)
+for otherType in otherFood:
+    print(otherType)
 # within each list it is possible to put a list as variable - list of lists
 game = [0,0,0,0,0,0]
 # this list would be printed flat - all 6 in a line
@@ -80,5 +80,6 @@ print(l)
 '''
 Whenever there is a part of code in early develpment of Python script that seem
 to be a repetitive but only under some different conditions use a function
-instead.  
+instead. The PEP8 styling standards for code suggests to use small leters with
+words separated by underscore, small letters at the begining for variables.
 '''
