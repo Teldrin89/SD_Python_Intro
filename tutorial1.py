@@ -76,3 +76,9 @@ print(l[2:])
 l[2] = 9
 # check the updated list
 print(l)
+
+'''
+Whenever there is a part of code in early develpment of Python script that seem
+to be a repetitive but only under some different conditions use a function
+instead.  
+'''
