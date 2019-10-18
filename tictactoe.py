@@ -9,7 +9,8 @@ steps that can be then followed along during the creation.
     represented by 1s and 2s (TODO: think over some functions in the future to
     represent the "x" and "o")
 3. The user input will be determined by first location and then the symbol
-
+4. Add a modification of game board - move from one of the players
+5. Prepare a function that will update the game board every time it's changed
 
 '''
 
@@ -17,6 +18,9 @@ steps that can be then followed along during the creation.
 game = [[0, 0, 0],
         [0, 0, 0],
         [0, 0, 0]]
+
+# to change a specific position reference the index in given list of lists
+game[0][1] = 1
 
 # print the top row that will be column part of and adress for each position
 print("   A  B  C")
