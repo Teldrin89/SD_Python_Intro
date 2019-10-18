@@ -21,9 +21,10 @@ game = [[0, 0, 0],
 
 # to change a specific position reference the index in given list of lists
 game[0][1] = 1
-
+'''
 # print the top row that will be column part of and adress for each position
 print("   A  B  C")
+'''
 '''
 # to lable the rows use counter - intialize counter outside of the for loop
 count = 0
@@ -35,7 +36,15 @@ for row in game:
     # increment count
     count += 1 # == count + 1
 '''
+'''
 # instead of using the above code use the simpler version with in-built function
 # the enumerate function will increment on iterable object - in our case rows
 for count, row in enumerate(game):
     print(count, row)
+'''
+
+# define a function to be called for game representation after every move
+def game_board():
+    print("  A B C")
+    for count, row in enumerate(game):
+        print(count, row)
