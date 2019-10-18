@@ -12,3 +12,26 @@ steps that can be then followed along during the creation.
 
 
 '''
+
+# prepare a game board
+game = [[0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]]
+
+# print the top row that will be column part of and adress for each position
+print("   A  B  C")
+'''
+# to lable the rows use counter - intialize counter outside of the for loop
+count = 0
+
+# print each row of the game indyvidually to get the 3x3 board
+for row in game:
+    # print both count and row 
+    print(count, row)
+    # increment count
+    count += 1 # == count + 1
+'''
+# instead of using the above code use the simpler version with in-built function
+# the enumerate function will increment on iterable object - in our case rows
+for count, row in enumerate(game):
+    print(count, row)
