@@ -42,4 +42,12 @@ print(type(other_food))
 # printout the other food list
 for other_type in other_food:
     print(other_type)
-
+# within each list it is possible to put a list as variable - list of lists
+game = [0,0,0,0,0,0]
+# this list would be printed flat - all 6 in a line
+print(game)
+# to show for example a grid 3x3 it would require to use lists within the list
+game = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+# then to show the rows on top of one another use the for loop
+for row in game:
+    print(row)
