@@ -51,3 +51,28 @@ game = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 # then to show the rows on top of one another use the for loop
 for row in game:
     print(row)
+
+'''
+To refrence an index of a list use the "[]" and then the index number (remember 
+that in Python list indexs start at "0"). To get the last index in the either use
+the max index number or "-1" (first from the end). To get a range of indexes from
+the list use ":" with 2 values "from" and to which "to" get the value (remembering 
+that the "to" value will not be taken). To get from the begining or to the last 
+use only a single value with ":".
+'''
+# example of list
+l = [1,2,3,4,5]
+# printout the list
+print(l)
+# printout the 2nd item from the list
+print(l[1])
+# printout the last item
+print(l[-1])
+# printout items from 2nd to 4th
+print(l[1:4])
+# printout indexes from 3rd to last
+print(l[2:])
+# the list is mutable so there is a way to change a specific values within
+l[2] = 9
+# check the updated list
+print(l)
