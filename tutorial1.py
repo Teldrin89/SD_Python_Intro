@@ -83,3 +83,13 @@ to be a repetitive but only under some different conditions use a function
 instead. The PEP8 styling standards for code suggests to use small leters with
 words separated by underscore, small letters at the begining for variables.
 '''
+
+# function example - an addition function
+def addition(x,y):
+    return x+y
+
+# check the function work
+z = addition(4,3)
+print(z)
+
+# TODO: finished on P7, 2:30
