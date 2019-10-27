@@ -48,3 +48,9 @@ def game_board():
     print("  A B C")
     for count, row in enumerate(game):
         print(count, row)
+
+'''
+every time the user will make a move within the game the board will have to be 
+re-adjusted - hence the game_board function would have to be used so in order to
+make the script easier, the game function will also be included in the function
+'''
