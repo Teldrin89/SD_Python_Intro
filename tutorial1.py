@@ -92,4 +92,11 @@ def addition(x,y):
 z = addition(4,3)
 print(z)
 
-# TODO: finished on P7, 2:30
+'''
+This function works for numbers put as parameters but also works for example for
+2 strings - when they have "+" sign in between it works as concatenate but when
+using for example "2" and "apple" it wont work because these would be 2 different
+variable formats. The blessing and a curse of Python is that it doesn't need a
+variable type set but it require user to know what type of parameters have to be
+provided to function.
+'''
