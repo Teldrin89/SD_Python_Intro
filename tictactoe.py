@@ -11,6 +11,7 @@ steps that can be then followed along during the creation.
 3. The user input will be determined by first location and then the symbol
 4. Add a modification of game board - move from one of the players
 5. Prepare a function that will update the game board every time it's changed
+6. Update function to also take into account the turn of each players move
 
 '''
 
@@ -19,8 +20,10 @@ game = [[0, 0, 0],
         [0, 0, 0],
         [0, 0, 0]]
 
+'''
 # to change a specific position reference the index in given list of lists
 game[0][1] = 1
+'''
 '''
 # print the top row that will be column part of and adress for each position
 print("   A  B  C")
@@ -44,8 +47,13 @@ for count, row in enumerate(game):
 '''
 
 # define a function to be called for game representation after every move
-def game_board():
-    print("  A B C")
+# additional parameters passed to game_board function
+# a default value of "0" added to each parameter
+# adding a flag at the end for just running the code to display the game board
+def game_board(player=0, row=0, column=0, display = False):
+    print("   A  B  C")
+    if not display:
+        game[row][column] = player
     for count, row in enumerate(game):
         print(count, row)
 
@@ -54,3 +62,6 @@ every time the user will make a move within the game the board will have to be
 re-adjusted - hence the game_board function would have to be used so in order to
 make the script easier, the game function will also be included in the function
 '''
+# now to change the game board, data has to be passsed to game_board function
+game_board(display=True)
+game_board(1,2,1)
