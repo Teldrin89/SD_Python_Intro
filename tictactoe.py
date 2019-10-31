@@ -50,12 +50,15 @@ for count, row in enumerate(game):
 # additional parameters passed to game_board function
 # a default value of "0" added to each parameter
 # adding a flag at the end for just running the code to display the game board
-def game_board(player=0, row=0, column=0, display = False):
+# update a function to pass a game_map to the game_board function
+def game_board(game_map, player=0, row=0, column=0, display = False):
     print("   A  B  C")
     if not display:
-        game[row][column] = player
-    for count, row in enumerate(game):
+        game_map[row][column] = player
+    for count, row in enumerate(game_map):
         print(count, row)
+    # return a game_map
+    return game_map
 
 '''
 every time the user will make a move within the game the board will have to be 
@@ -63,5 +66,6 @@ re-adjusted - hence the game_board function would have to be used so in order to
 make the script easier, the game function will also be included in the function
 '''
 # now to change the game board, data has to be passsed to game_board function
-game_board(display=True)
-game_board(1,2,1)
+# adjust the function callout (new parameter) and assign the result to game variable
+game = game_board(game, display=True)
+game = game_board(game, 1,2,1)
