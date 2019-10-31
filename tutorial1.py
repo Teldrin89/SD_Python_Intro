@@ -100,3 +100,68 @@ variable formats. The blessing and a curse of Python is that it doesn't need a
 variable type set but it require user to know what type of parameters have to be
 provided to function.
 '''
+
+'''
+Mutability and immutability of some variables may have crucial role in script 
+writing.
+'''
+
+# set a variable - string
+game = "I want to play a game"
+# print the game variable
+print(game)
+# check the id of game variable
+print(id(game))
+
+# set a simple function that will try to change the game variable
+def game_change():
+    game = "A game"
+    # print the game variable from function
+    print(game)
+    # print the id value of game variable
+    print(id(game))
+
+# run game_change
+game_change()
+# check for the updated game variable
+print(game)
+# game variable was not changed with function script
+# print the game id
+print(id(game))
+
+'''
+The results show that there are 2 variables of the same name but that are actually
+2 different variables - hence one was set at the begining and the other comes from
+game_change() function. When trying something similar with list of numbers the
+function will allow to update the values within a list but not to change it's 
+content with different type of data (eg. string)
+'''
+
+# set a variable - list
+game_list = [1, 2, 3]
+# print the game list and it's ID
+print(game_list)
+print(id(game_list))
+
+# prepare a function that will change the content of game_list variable
+def game_update():
+    # try to update the game variable with change to string
+    # game_list = "A game"
+
+    # try to update just a value within list
+    game_list[1] = 56
+    # printout the variable and it's ID
+    print(game_list)
+    print(id(game_list))
+
+# run the function
+game_update()
+# printout the game_list (with ID)
+print(game_list)
+print(id(game_list))
+
+'''
+Now with that latest version of the game_update it is possible to modify the value
+within the list of variable that was referenced before function and still reference
+to it after function execution.
+'''
