@@ -174,34 +174,34 @@ x = 1
 def test():
     x = 2
 test()
-print(x)
+print(x) # 1
 
 
 x = 1
-def test():
+def test1():
     global x
     x = 2
-test()
-print(x)
+test1()
+print(x) # 2
 
 
 x = [1]
-def test():
+def test2():
     x = [2]
-test()
-print(x)
+test2()
+print(x) # [1]
 
 
 x = [1]
-def test():
+def test3():
     global x
     x = [2]
-test()
-print(x)
+test3()
+print(x) # [2]
 
 
 x = [1]
-def test():
+def test4():
     x[0] = 2
-test()
-print(x)
+test4()
+print(x) # [2]
