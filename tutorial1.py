@@ -165,3 +165,43 @@ Now with that latest version of the game_update it is possible to modify the val
 within the list of variable that was referenced before function and still reference
 to it after function execution.
 '''
+
+'''
+A quiz - guess by commenting the print line of each question the value of x 
+'''
+
+x = 1
+def test():
+    x = 2
+test()
+print(x)
+
+
+x = 1
+def test():
+    global x
+    x = 2
+test()
+print(x)
+
+
+x = [1]
+def test():
+    x = [2]
+test()
+print(x)
+
+
+x = [1]
+def test():
+    global x
+    x = [2]
+test()
+print(x)
+
+
+x = [1]
+def test():
+    x[0] = 2
+test()
+print(x)
