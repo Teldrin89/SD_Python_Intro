@@ -205,3 +205,10 @@ def test4():
     x[0] = 2
 test4()
 print(x) # [2]
+
+'''
+For the general way to implement error handling it's best to use the "try: except:"
+formula that will try the piece of code and in case of an error we can return 
+information back to user. Apart form "try" and "except" there are additional 
+options within this function as "else" and "finally"
+'''
