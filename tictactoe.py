@@ -12,6 +12,7 @@ steps that can be then followed along during the creation.
 4. Add a modification of game board - move from one of the players
 5. Prepare a function that will update the game board every time it's changed
 6. Update function to also take into account the turn of each players move
+7. Add erorr handling options in function (for example the wrong input type)
 
 '''
 
@@ -51,15 +52,25 @@ for count, row in enumerate(game):
 # a default value of "0" added to each parameter
 # adding a flag at the end for just running the code to display the game board
 # update a function to pass a game_map to the game_board function
+# update function for error handling: input data error
 def game_board(game_map, player=0, row=0, column=0, display = False):
-    print("   A  B  C")
-    if not display:
-        game_map[row][column] = player
-    for count, row in enumerate(game_map):
-        print(count, row)
-    # return a game_map
-    return game_map
-
+    # introduce error handling with try-except function
+    try:
+        print("   A  B  C")
+        if not display:
+            game_map[row][column] = player
+        for count, row in enumerate(game_map):
+            print(count, row)
+        # return a game_map
+        return game_map
+    # consider except condition with index error
+    except IndexError as e:
+        # printout message for index error
+        print("Error: make sure you input row/column as 0, 1 or 2", e)
+    # consider all other errors - for example programming error with wrong game 
+    # map input
+    except Exception as e:
+        print("Something very wrong happened!")
 '''
 every time the user will make a move within the game the board will have to be 
 re-adjusted - hence the game_board function would have to be used so in order to
