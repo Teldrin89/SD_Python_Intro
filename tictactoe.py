@@ -4,16 +4,18 @@ some of the basic functions and modules of Python.
 The best way to apporach every new project is to write down the idea in simple 
 steps that can be then followed along during the creation.
 # --- The Game of Tic-Tac-Toe ---
-1. The basic representation of a game board will be a list of lists with size 3x3
-2. The starting point will be represented by 0s and the "x" and "o" will be 
-    represented by 1s and 2s (TODO: think over some functions in the future to
-    represent the "x" and "o")
-3. The user input will be determined by first location and then the symbol
-4. Add a modification of game board - move from one of the players
-5. Prepare a function that will update the game board every time it's changed
-6. Update function to also take into account the turn of each players move
-7. Add erorr handling options in function (for example the wrong input type)
-8. Calculating one of the version of winning conditions - horizotal winner
+1.  The basic representation of a game board will be a list of lists with size 3x3
+2.  The starting point will be represented by 0s and the "x" and "o" will be 
+     represented by 1s and 2s (TODO: think over some functions in the future to
+     represent the "x" and "o")
+3.  The user input will be determined by first location and then the symbol
+4.  Add a modification of game board - move from one of the players
+5.  Prepare a function that will update the game board every time it's changed
+6.  Update function to also take into account the turn of each players move
+7.  Add erorr handling options in function (for example the wrong input type)
+8.  Calculating one of the version of winning conditions - horizotal winner
+9.  Calculating one of the version of winning conditions - veritcal winner
+10. Calculating one of the version of winning conditions - diagonal winner
 
 '''
 
@@ -131,5 +133,7 @@ for col in range(len(game)):
     if check.count(check[col]) == len(check) and check[col] != 0:
         print("VERTICAL Winner!")
 
-# the code will only check 1st column as index is hard coded to "0" - change it to
-# "1" to check the middle column
+# define a win check parameters - DIAGONAL - two possible solutions with similar
+# approach as in vertical and horizontal checks
+
+
