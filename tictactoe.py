@@ -116,14 +116,20 @@ game = game_board(game, 2,1,1)
 
 # define a win check parameters - VERTICAL - using similar approach as in horizontal
 # set a list variable that will be checked
-check = []
-# for each row in the game board append the list with 1st element of the row
-for row in game:
-    check.append(row[1])
-# run an if statement to check the same conditions as in horizontal check but now
-# on a newly defined sublist of vertical elements
-if check.count(check[1]) == len(check) and check[1] != 0:
-    print("VERTICAL Winner!")
+
+# introduce a list of columns - hard coded for now
+columns = [0, 1, 2]
+# for each column in game board run the veritcal check
+for col in columns:
+    # in order to make it work for all columns - introduce iteration for all columns
+    check = []
+    # for each row in the game board append the list with 1st element of the row
+    for row in game:
+        check.append(row[col])
+    # run an if statement to check the same conditions as in horizontal check but now
+    # on a newly defined sublist of vertical elements
+    if check.count(check[col]) == len(check) and check[col] != 0:
+        print("VERTICAL Winner!")
 
 # the code will only check 1st column as index is hard coded to "0" - change it to
 # "1" to check the middle column
