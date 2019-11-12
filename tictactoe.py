@@ -119,8 +119,11 @@ game = game_board(game, 2,1,1)
 check = []
 # for each row in the game board append the list with 1st element of the row
 for row in game:
-    check.append(row[0])
+    check.append(row[1])
 # run an if statement to check the same conditions as in horizontal check but now
 # on a newly defined sublist of vertical elements
-if check.count(check[0]) == len(check) and check[0] != 0:
+if check.count(check[1]) == len(check) and check[1] != 0:
     print("VERTICAL Winner!")
+
+# the code will only check 1st column as index is hard coded to "0" - change it to
+# "1" to check the middle column
