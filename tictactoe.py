@@ -118,9 +118,9 @@ game = game_board(game, 2,1,1)
 # set a list variable that will be checked
 
 # introduce a list of columns - hard coded for now
-columns = [0, 1, 2]
+# in order to make it variable introduce range function for length of game board
 # for each column in game board run the veritcal check
-for col in columns:
+for col in range(len(game)):
     # in order to make it work for all columns - introduce iteration for all columns
     check = []
     # for each row in the game board append the list with 1st element of the row
