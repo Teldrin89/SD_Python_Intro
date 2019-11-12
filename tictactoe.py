@@ -62,6 +62,7 @@ def game_board(game_map, player=0, row=0, column=0, display = False):
             game_map[row][column] = player
         for count, row in enumerate(game_map):
             print(count, row)
+        print()
         # return a game_map
         return game_map
     # consider except condition with index error
@@ -80,31 +81,29 @@ make the script easier, the game function will also be included in the function
 # now to change the game board, data has to be passsed to game_board function
 # adjust the function callout (new parameter) and assign the result to game variable
 game = game_board(game, display=True)
-game = game_board(game, 1,2,1)
+game = game_board(game, 2,2,1)
 
 '''
 to determine the win, introduce a function that will check the current game if
 the conditions for winning of the game have been met
+the initial function had many flows especially the scalability of this solution
+could be a problem as it is hard coded; a better solution would be to introduce
+parameters that will be dynamically assigned to for example the size of game board
 '''
 # define a win check function
 def win(current_game):
     # check all rows in game board
     for row in game:
-        # printout each column
-        print(row)
-        # assign each column
-        col1 = row[0]
-        col2 = row[1]
-        col3 = row[2]
-    # check if all of the columns are the same value - winning condition, vertical
-    if col1 == col2 == col3:
-        print("winnner!")
-    else:
-        print("keep playing!")
+        # run if statement and count each row[0] - if we have the same number of
+        # identical elements as a length of that row it is a winning condition
+        # add exclusion of all "0" rows (starting set of game board)
+        if row.count(row[0]) == len(row) and row[0] != 0:
+            print("Winner!")
+
 
 # check winning conditions after each update of game board
 win(game)
-game = game_board(game, 1,2,2)
+game = game_board(game, 2,2,2)
 win(game)
-game = game_board(game, 1,2,0)
+game = game_board(game, 2,2,0)
 win(game)
