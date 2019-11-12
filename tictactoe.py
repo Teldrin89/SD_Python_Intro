@@ -90,7 +90,7 @@ the initial function had many flows especially the scalability of this solution
 could be a problem as it is hard coded; a better solution would be to introduce
 parameters that will be dynamically assigned to for example the size of game board
 '''
-# define a win check function
+# define a win check function - HORIZONTAL
 def win(current_game):
     # check all rows in game board
     for row in game:
@@ -98,12 +98,29 @@ def win(current_game):
         # identical elements as a length of that row it is a winning condition
         # add exclusion of all "0" rows (starting set of game board)
         if row.count(row[0]) == len(row) and row[0] != 0:
-            print("Winner!")
+            print("HORIZONTAL Winner!")
 
 
 # check winning conditions after each update of game board
 win(game)
-game = game_board(game, 2,2,2)
-win(game)
 game = game_board(game, 2,2,0)
 win(game)
+game = game_board(game, 2,2,2)
+win(game)
+
+# change game for vertical win conditions
+game = game_board(game, 0,2,0)
+game = game_board(game, 0,2,2)
+game = game_board(game, 2,0,1)
+game = game_board(game, 2,1,1)
+
+# define a win check parameters - VERTICAL - using similar approach as in horizontal
+# set a list variable that will be checked
+check = []
+# for each row in the game board append the list with 1st element of the row
+for row in game:
+    check.append(row[0])
+# run an if statement to check the same conditions as in horizontal check but now
+# on a newly defined sublist of vertical elements
+if check.count(check[0]) == len(check) and check[0] != 0:
+    print("VERTICAL Winner!")
