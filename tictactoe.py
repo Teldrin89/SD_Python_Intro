@@ -13,6 +13,7 @@ steps that can be then followed along during the creation.
 5. Prepare a function that will update the game board every time it's changed
 6. Update function to also take into account the turn of each players move
 7. Add erorr handling options in function (for example the wrong input type)
+8. Calculating one of the version of winning conditions - horizotal winner
 
 '''
 
@@ -80,3 +81,30 @@ make the script easier, the game function will also be included in the function
 # adjust the function callout (new parameter) and assign the result to game variable
 game = game_board(game, display=True)
 game = game_board(game, 1,2,1)
+
+'''
+to determine the win, introduce a function that will check the current game if
+the conditions for winning of the game have been met
+'''
+# define a win check function
+def win(current_game):
+    # check all rows in game board
+    for row in game:
+        # printout each column
+        print(row)
+        # assign each column
+        col1 = row[0]
+        col2 = row[1]
+        col3 = row[2]
+    # check if all of the columns are the same value - winning condition, vertical
+    if col1 == col2 == col3:
+        print("winnner!")
+    else:
+        print("keep playing!")
+
+# check winning conditions after each update of game board
+win(game)
+game = game_board(game, 1,2,2)
+win(game)
+game = game_board(game, 1,2,0)
+win(game)
