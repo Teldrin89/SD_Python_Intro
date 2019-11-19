@@ -16,6 +16,8 @@ steps that can be then followed along during the creation.
 8.  Calculating one of the version of winning conditions - horizotal winner
 9.  Calculating one of the version of winning conditions - veritcal winner
 10. Calculating one of the version of winning conditions - diagonal winner
+11. Combining all of the functions for full game
+12. Work on user input
 
 '''
 
@@ -194,3 +196,28 @@ print("The forward diagonal")
 print(new_diag)
 print()
 # then using the same logic as before it can be checked if all values are the same
+
+'''
+the other way to run the same for loop but using the zip function that can 
+aggregate elements from each of the iterables and also eliminate the temporary
+lists for columns and rows
+'''
+
+# use the zip function in for loop
+for col, row in zip(reversed(range(len(game))), range(len(game))):
+    # this for loop returns the same set of parameters neede for game board to be
+    # checked at for determining the winning condition of forward diagonal
+    print(col, row)
+
+# even shorter script could use an enumerate function
+for col2, row2 in enumerate(reversed(range(len(game)))):
+    # the result is the same in that it is a sequence of 2 numbers - although the
+    # order is reversed
+    print(col2, row2)
+print()
+# the function that will be used in final version of the game
+diags = []
+for col, row in enumerate(reversed(range(len(game)))):
+    diags.append(game[row][col])
+print("Final Version - backwards diagonal")
+print(diags)
