@@ -136,4 +136,23 @@ for col in range(len(game)):
 # define a win check parameters - DIAGONAL - two possible solutions with similar
 # approach as in vertical and horizontal checks
 
+# change game for diagonal win conditions
+game = [[1, 0, 2],
+        [1, 1, 0],
+        [2, 2, 1]]
+
+game_board(game, 1, 0, 0)
+
+'''
+# first diagonal check for fixed 3x3 game board
+if game[0][0] == game[1][1] == game[2][2]:
+    print("Diagonal Winner!")
+
+# second diagonal check for fixed 3x3 game board
+if game[2][0] == game[1][1] == game[0][2]:
+    print("2nd Diagonal Winner!")
+
+# the fixed check for diagonal winnings was a first check, next is to make it work
+# at every other size of the game board
+'''
 
