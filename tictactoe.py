@@ -141,7 +141,7 @@ game = [[1, 0, 2],
         [1, 1, 0],
         [2, 2, 1]]
 
-game_board(game, 1, 0, 0)
+game_board(game, 2, 1, 1)
 
 '''
 # first diagonal check for fixed 3x3 game board
@@ -169,7 +169,28 @@ for ix in range(len(game)):
     # take the value of game board from set positions
     diags.append(game[ix][ix])
 # prinout the temp list of diagonal values
+print("The backward diagonal")
 print(diags)
+print()
 # then the same logic can be used as in the veritcal winner portion of the code
 
+'''
+to work on the other diagonal winning condition the "x" and "y" parameters shall
+go in reverse order: as in 3x3 game it will be a sequence of [2][0] -> [1][1] 
+-> [0][2] so there might be a way to do this with single for loop but one going 
+forward and one going backwards
+'''
 
+# list of column indexes using 4 functions
+cols = list(reversed(range(len(game))))
+# list of rows 
+rows = list(range(len(game)))
+# with two lists going in oposite direction check the other diagonal
+new_diag = []
+for ii in range(len(game)):
+    new_diag.append(game[cols[ii]][rows[ii]])
+
+print("The forward diagonal")
+print(new_diag)
+print()
+# then using the same logic as before it can be checked if all values are the same
