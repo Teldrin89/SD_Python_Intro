@@ -156,3 +156,20 @@ if game[2][0] == game[1][1] == game[0][2]:
 # at every other size of the game board
 '''
 
+'''
+in order to handle the 1st diagonal case - with each position in game board having
+the same vertical and horizontal parameter it's simple: use the size of the game
+board as a parametrization
+'''
+
+# create a temp variable - list
+diags = []
+# run a for loop in range of the game board size
+for ix in range(len(game)):
+    # take the value of game board from set positions
+    diags.append(game[ix][ix])
+# prinout the temp list of diagonal values
+print(diags)
+# then the same logic can be used as in the veritcal winner portion of the code
+
+
