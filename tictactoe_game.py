@@ -72,6 +72,23 @@ def win(current_game):
             check.append(row[col])
         if check.count(check[col]) == len(check) and check[col] != 0:
             print(f"Player {check[0]} is the winner vertically (|)!")
-
-# check if all is working
+# setup basic properties - boolean for play state and list of players
+play = True
+players = [1, 2]
+# create a while loop that will be played till someone winns or quits
+while play:
+    # for start re-start a game board
+    game = [[0, 0, 0],
+            [0, 0, 0],
+            [0, 0, 0]]
+    # setup a game won flag - False in the beggining
+    game_won = False
+    
+'''
+# check for functions working - commented out
+# check if win function is working
 win(game)
+# check for game_board function working
+game = game_board(game, display=True)
+game = game_board(game, player=1, row=2, column=1)
+'''
