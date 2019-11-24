@@ -94,15 +94,35 @@ the initial function had many flows especially the scalability of this solution
 could be a problem as it is hard coded; a better solution would be to introduce
 parameters that will be dynamically assigned to for example the size of game board
 '''
-# define a win check function - HORIZONTAL
+# define a win check function
 def win(current_game):
-    # check all rows in game board
+    # HORIZONTAL winning conditions check
     for row in game:
-        # run if statement and count each row[0] - if we have the same number of
-        # identical elements as a length of that row it is a winning condition
-        # add exclusion of all "0" rows (starting set of game board)
         if row.count(row[0]) == len(row) and row[0] != 0:
-            print("HORIZONTAL Winner!")
+            print(f"Player {row[0]} is the winner horizontally!")
+    
+    # DIAGONAL winning conditions check
+    diags = []
+    for col, row in enumerate(reversed(range(len(game)))):
+        diags.append(game[row][col])
+    if diags.count(diags[0]) == len(diags) and diags[0] != 0:
+        print(f"Player {row[0]} is the winner diagonally (/)!")
+    
+    diags = []
+    for ii in range(len(game)):
+        diags.append(game[ii][ii])
+    if diags.count(diags[0]) == len(diags) and diags[0] != 0:
+        # in order print the back slash it has to be 2x\\ as the first one is the
+        # special sign that says in python to treat the next character as string
+        print(f"Player {row[0]} is the winner diagonally (\\)!")
+
+    # VERTICAL winning conditions check
+    for col in range(len(game)):
+        check = []
+        for row in game:
+            check.append(row[col])
+        if check.count(check[col]) == len(check) and check[col] != 0:
+            print(f"Player {check[0]} is the winner vertically!")
 
 
 # check winning conditions after each update of game board
