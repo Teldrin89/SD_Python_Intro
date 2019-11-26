@@ -83,7 +83,18 @@ while play:
             [0, 0, 0]]
     # setup a game won flag - False in the beggining
     game_won = False
-    
+    # show initial game map
+    game = game_board(game, display=True)
+    # another loop added for a specific game
+    while not game_won:
+        # for now set player
+        current_player = 1
+        # ask user about column and row - remember to put them as integers
+        column_choice = int(input("What column do you want to play? (0, 1, 2): "))
+        row_choice = int(input("What row do you want to play? (0, 1, 2): "))
+        # run the function
+        game = game_board(game, current_player, row_choice, column_choice)
+
 '''
 # check for functions working - commented out
 # check if win function is working
