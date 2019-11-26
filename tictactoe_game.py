@@ -17,10 +17,10 @@ steps that can be then followed along during the creation.
 9.  Calculating one of the version of winning conditions - veritcal winner
 10. Calculating one of the version of winning conditions - diagonal winner
 11. Combining all of the functions for full game
-12. Work on user input
+12. Work on the play state and UI
 
 '''
-
+import itertools
 # prepare a game board
 game = [[1, 2, 2],
         [1, 1, 1],
@@ -85,10 +85,14 @@ while play:
     game_won = False
     # show initial game map
     game = game_board(game, display=True)
+    # cycle temp variable for players
+    player_choice = itertools.cycle(players)
     # another loop added for a specific game
     while not game_won:
-        # for now set player
-        current_player = 1
+        # updated - using next function cycle trough players
+        current_player = next(player_choice)
+        # print current player
+        print(f"Current Player: {current_player}")
         # ask user about column and row - remember to put them as integers
         column_choice = int(input("What column do you want to play? (0, 1, 2): "))
         row_choice = int(input("What row do you want to play? (0, 1, 2): "))
