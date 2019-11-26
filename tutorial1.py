@@ -241,3 +241,46 @@ player_choice = itertools.cycle([1, 2])
 # run the same loop to 10 to check the results
 for i in range(10):
     print(next(player_choice))
+
+print()
+print()
+'''
+Explaining the difference between iterable and iterator:
+iterable: a thing that can be iterated over
+iterator: a special object with next() method
+'''
+
+#Example 1 - iterable
+x = [1, 2, 3, 4] # iterable
+
+# can do iteration over the x
+for i in x:
+    print(i)
+# can't use next method over x
+# print(next(x))
+print()
+print()
+
+# Example 2 - iterator
+n = itertools.cycle(x) # iterator.... but also iterable!
+# check if it's responding to next method
+print(next(n))
+print(next(n))
+print(next(n))
+print(next(n))
+print(next(n))
+print(next(n))
+# it's remembering a past value and cycles through list
+
+# it' also iterable as we can iterate over n
+# for i in n: # commented out as it creates an infinite loop
+#     print(i)
+
+print()
+print()
+
+# to make an iterable an iterator use iter function
+y = iter(x)
+
+print(next(y))
+print(next(y))
