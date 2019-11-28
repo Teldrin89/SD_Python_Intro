@@ -16,8 +16,11 @@ steps that can be then followed along during the creation.
 8.  Calculating one of the version of winning conditions - horizotal winner
 9.  Calculating one of the version of winning conditions - veritcal winner
 10. Calculating one of the version of winning conditions - diagonal winner
-11. Combining all of the functions for full game
-12. Work on the play state and UI
+11. Combining all of the win conditions functions for full game
+12. Work on the play state - run game till winner is determined
+13. Connect win function to main play state
+14. Work on the "hard coded" parts of the code
+
 
 '''
 import itertools
