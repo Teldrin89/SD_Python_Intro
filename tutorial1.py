@@ -323,3 +323,22 @@ print(dict["key1"])
 # you can add next keys to the dict
 dict["whatsup"] = 92
 print(dict)
+print()
+
+'''
+trying to generate a dynamic size of game
+'''
+# game size variable
+game_size = 6
+# empty game map
+game = []
+# run loop for game size - list comprehension
+for i in range(game_size):
+    row = []
+    # assume an even number of rows and columns
+    for i in range(game_size):
+        row.append(0)
+    game.append(row)
+
+# check the new size game map
+print(game)
