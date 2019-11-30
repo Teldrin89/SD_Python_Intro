@@ -55,22 +55,31 @@ def game_board(game_map, player=0, row=0, column=0, display = False):
 
 # define a win check function
 def win(current_game):
+
+    # new function that will check if all paramters are the same in list
+    def all_same(l):
+        if l.count(l[0]) == len(l) and l[0] != 0:
+            return True
+        else:
+            return False
+    
+
     # HORIZONTAL winning conditions check
     for row in game:
-        if row.count(row[0]) == len(row) and row[0] != 0:
+        if all_same(row):
             print(f"Player {row[0]} is the winner horizontally (-)!")
     
     # DIAGONAL winning conditions check
     diags = []
     for col, row in enumerate(reversed(range(len(game)))):
         diags.append(game[row][col])
-    if diags.count(diags[0]) == len(diags) and diags[0] != 0:
+    if all_same(diags):
         print(f"Player {diags[0]} is the winner diagonally (/)!")
     
     diags = []
     for ii in range(len(game)):
         diags.append(game[ii][ii])
-    if diags.count(diags[0]) == len(diags) and diags[0] != 0:
+    if all_same(diags):
         # in order print the back slash it has to be 2x\\ as the first one is the
         # special sign that says in python to treat the next character as string
         print(f"Player {diags[0]} is the winner diagonally (\\)!")
@@ -80,7 +89,7 @@ def win(current_game):
         check = []
         for row in game:
             check.append(row[col])
-        if check.count(check[col]) == len(check) and check[col] != 0:
+        if all_same(check):
             print(f"Player {check[0]} is the winner vertically (|)!")
 # setup basic properties - boolean for play state and list of players
 play = True
