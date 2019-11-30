@@ -114,9 +114,16 @@ players = [1, 2]
 # create a while loop that will be played till someone winns or quits
 while play:
     # for start re-start a game board
+    '''
+    # older static game map definition
     game = [[0, 0, 0],
             [0, 0, 0],
             [0, 0, 0]]
+    '''
+    # start with game map size definition - by player
+    game_size = int(input("What size game map do you want? " ))
+    game = [[ 0 for i in range(game_size)] for i in range(game_size)]
+
     # setup a game won flag - False in the beggining
     game_won = False
     # show initial game map
