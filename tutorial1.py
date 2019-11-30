@@ -284,3 +284,23 @@ y = iter(x)
 
 print(next(y))
 print(next(y))
+print()
+print()
+
+'''
+Try to remove the hard coded part of game map as in example
+'''
+game_size = 3
+print("   0  1  2")
+# disect the string from print above and bild one with game size parameter
+s = " " # inital space
+for i in range(game_size):
+    s += "  "+str(i)
+
+print()
+print(s)
+
+print()
+# another way of doing it would be with join function
+s = "   "+"  ".join([str(i) for i in range(game_size)])
+print(s)
