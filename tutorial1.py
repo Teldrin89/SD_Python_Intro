@@ -342,3 +342,8 @@ for i in range(game_size):
 
 # check the new size game map
 print(game)
+print()
+# more compact for loop for the game map with input game size
+game_size = int(input("What size game map do you want? " ))
+game = [[ 0 for i in range(game_size)] for i in range(game_size)]
+print(game)
