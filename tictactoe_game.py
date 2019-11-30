@@ -24,27 +24,34 @@ steps that can be then followed along during the creation.
 
 '''
 import itertools
-# prepare a game board
-game = [[1, 2, 2],
+# prepare a game board - commented out as the starting board is down
+'''
+ game = [[1, 2, 2],
         [1, 1, 1],
         [2, 0, 1]]
-
+'''
 
 # define a function to be called for game representation after every move
 def game_board(game_map, player=0, row=0, column=0, display = False):
     try:
+        # check if players are trying to play one over the other
+        if game_map[row][column] != 0:
+            print("This position is occupied! Choose another")
+            return game_map, False
         print("   A  B  C")
         if not display:
             game_map[row][column] = player
         for count, row in enumerate(game_map):
             print(count, row)
         print()
-        return game_map
+        return game_map, True
     # consider except condition with index error
     except IndexError as e:
         print("Error: make sure you input row/column as 0, 1 or 2", e)
+        return game_map, False
     except Exception as e:
         print("Something very wrong happened!")
+        return game_map, False
 
 # define a win check function
 def win(current_game):
@@ -87,7 +94,7 @@ while play:
     # setup a game won flag - False in the beggining
     game_won = False
     # show initial game map
-    game = game_board(game, display=True)
+    game, _ = game_board(game, display=True)
     # cycle temp variable for players
     player_choice = itertools.cycle(players)
     # another loop added for a specific game
@@ -96,11 +103,15 @@ while play:
         current_player = next(player_choice)
         # print current player
         print(f"Current Player: {current_player}")
-        # ask user about column and row - remember to put them as integers
-        column_choice = int(input("What column do you want to play? (0, 1, 2): "))
-        row_choice = int(input("What row do you want to play? (0, 1, 2): "))
-        # run the function
-        game = game_board(game, current_player, row_choice, column_choice)
+        # adding states - played
+        played = False
+        # run the current player if the turn has not been yet played
+        while not played:
+            # ask user about column and row - remember to put them as integers
+            column_choice = int(input("What column do you want to play? (0, 1, 2): "))
+            row_choice = int(input("What row do you want to play? (0, 1, 2): "))
+            # run the function and played state
+            game, played = game_board(game, current_player, row_choice, column_choice)
 
 '''
 # check for functions working - commented out
