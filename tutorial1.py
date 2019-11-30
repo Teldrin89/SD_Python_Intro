@@ -310,3 +310,16 @@ print()
 import string
 s = "   "+"  ".join([string.ascii_uppercase[i] for i in range(game_size)])
 print(s)
+print()
+
+'''
+dictionaries are a key-value format data type in which for each item there is
+a possibility of assignning a value
+'''
+# dict example
+dict = {"key1":15, "key2":34}
+# printout the value of 1st key
+print(dict["key1"])
+# you can add next keys to the dict
+dict["whatsup"] = 92
+print(dict)
