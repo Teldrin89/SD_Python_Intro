@@ -20,7 +20,7 @@ steps that can be then followed along during the creation.
 12. Work on the play state - run game till winner is determined
 13. Connect win function to main play state
 14. Work on the "hard coded" parts of the code
-
+15. Consider trying to use different size of the game map
 
 '''
 import itertools, string
@@ -30,6 +30,11 @@ import itertools, string
         [1, 1, 1],
         [2, 0, 1]]
 '''
+# check if numpy is installed
+try:
+    import numpy
+except ImportError:
+    print("numpy not installed")
 
 # define a function to be called for game representation after every move
 def game_board(game_map, player=0, row=0, column=0, display = False):
