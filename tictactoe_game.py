@@ -68,6 +68,8 @@ def win(current_game):
     for row in game:
         if all_same(row):
             print(f"Player {row[0]} is the winner horizontally (-)!")
+            # adding a return of win function
+            return True
     
     # DIAGONAL winning conditions check
     diags = []
@@ -75,6 +77,7 @@ def win(current_game):
         diags.append(game[row][col])
     if all_same(diags):
         print(f"Player {diags[0]} is the winner diagonally (/)!")
+        return True
     
     diags = []
     for ii in range(len(game)):
@@ -83,6 +86,7 @@ def win(current_game):
         # in order print the back slash it has to be 2x\\ as the first one is the
         # special sign that says in python to treat the next character as string
         print(f"Player {diags[0]} is the winner diagonally (\\)!")
+        return True
 
     # VERTICAL winning conditions check
     for col in range(len(game)):
@@ -91,6 +95,10 @@ def win(current_game):
             check.append(row[col])
         if all_same(check):
             print(f"Player {check[0]} is the winner vertically (|)!")
+            return True
+    # at the end of the function if nobody won return false
+    return False
+
 # setup basic properties - boolean for play state and list of players
 play = True
 players = [1, 2]
@@ -121,6 +129,21 @@ while play:
             row_choice = int(input("What row do you want to play? (0, 1, 2): "))
             # run the function and played state
             game, played = game_board(game, current_player, row_choice, column_choice)
+        # add the check for if the game is won
+        if win(game):
+            # change game status
+            game_won = True
+            # ask if players want to play again
+            again = input("The game is over, would you like to play again? (y/n) ")
+            # check the response and execute the dedicated portions of the code
+            if again.lower() == "y":
+                print("Restarting....")
+            elif again.lower() == "n":
+                print("Ciao!")
+                play = False
+            else:
+                print("Not a valid response, closing game!")
+                play = False
 
 '''
 # check for functions working - commented out
