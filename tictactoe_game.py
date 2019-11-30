@@ -23,7 +23,7 @@ steps that can be then followed along during the creation.
 
 
 '''
-import itertools
+import itertools, string
 # prepare a game board - commented out as the starting board is down
 '''
  game = [[1, 2, 2],
@@ -38,7 +38,11 @@ def game_board(game_map, player=0, row=0, column=0, display = False):
         if game_map[row][column] != 0:
             print("This position is occupied! Choose another")
             return game_map, False
-        print("   A  B  C")
+        # print("   A  B  C") # previous look of the game map
+        # new look with numbers of both axes
+        # print("   "+"  ".join([str(i) for i in range(len(game_map))]))
+        # in case going back to upper case letter use string library
+        print("   "+"  ".join([string.ascii_uppercase[i] for i in range(len(game_map))]))
         if not display:
             game_map[row][column] = player
         for count, row in enumerate(game_map):

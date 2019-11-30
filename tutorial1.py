@@ -304,3 +304,9 @@ print()
 # another way of doing it would be with join function
 s = "   "+"  ".join([str(i) for i in range(game_size)])
 print(s)
+print()
+
+# if the string would contain letters in alphabetic order use string library
+import string
+s = "   "+"  ".join([string.ascii_uppercase[i] for i in range(game_size)])
+print(s)
