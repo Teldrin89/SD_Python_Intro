@@ -21,6 +21,7 @@ steps that can be then followed along during the creation.
 13. Connect win function to main play state
 14. Work on the "hard coded" parts of the code
 15. Consider trying to use different size of the game map
+16. Add a customization with colorama package
 
 '''
 import itertools, string
